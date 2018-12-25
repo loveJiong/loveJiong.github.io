@@ -11,7 +11,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
 
@@ -229,6 +238,133 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/25/Nuxt使用介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="loveJiong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lovejiong's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/25/Nuxt使用介绍/" itemprop="url">Nuxt使用介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T00:00:00+08:00">
+                2018-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          说明本文档是基于nuxt-demo的一篇对于nuxt框架的使用、特性介绍、以及服务端部署的文章。
+下载demo食用效果更佳。123456789101112131415# 克隆项目$ git clone https://github.com/loveJiong/nuxt-demo.git# 安装依赖$
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/25/Nuxt使用介绍/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/29/vuex的使用分享/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -260,7 +396,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T00:00:00+07:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-29T00:00:00+08:00">
                 2018-06-29
               </time>
             
@@ -300,37 +436,17 @@
       
         
           
-            <h2 id="1-安装vue-devtools"><a href="#1-安装vue-devtools" class="headerlink" title="1 安装vue-devtools"></a>1 安装<a href="https://github.com/vuejs/vue-devtools" target="_blank" rel="noopener">vue-devtools</a></h2><h3 id="1-1-谷歌浏览器插件安装"><a href="#1-1-谷歌浏览器插件安装" class="headerlink" title="1.1 谷歌浏览器插件安装"></a>1.1 谷歌浏览器插件安装</h3><p><a href="https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd" target="_blank" rel="noopener">谷歌商店</a>（需要翻墙）</p>
-<h3 id="1-2-运行在任何环境下的vue-devtools"><a href="#1-2-运行在任何环境下的vue-devtools" class="headerlink" title="1.2 运行在任何环境下的vue-devtools"></a>1.2 运行在任何环境下的vue-devtools</h3><p>可以运行在任何环境下的tools，这样就解决了一些使用自己外壳的项目也可以集成vue-devtools</p>
-<h4 id="1-2-1-安装devtools"><a href="#1-2-1-安装devtools" class="headerlink" title="1.2.1 安装devtools"></a>1.2.1 安装devtools</h4><p><code>npm install --save-dev @vue/devtools</code></p>
-<h4 id="1-2-2-使用devtools"><a href="#1-2-2-使用devtools" class="headerlink" title="1.2.2 使用devtools"></a>1.2.2 使用devtools</h4><p>启动devtools程序</p>
-<p><code>./node_modules/.bin/vue-devtools</code><br>或者直接加入项目中的package.json的开发依赖中，<code>npm install</code>的时候会自行安装</p>
-<p>关联到对应的vue项目中,在入口文件中引入devtools<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> devtools <span class="keyword">from</span> <span class="string">'@vue/devtools'</span></span><br><span class="line"><span class="comment">// import Vue from 'vue'</span></span><br></pre></td></tr></table></figure></p>
-<font color="red">注意要在vue之前import</font>
-
-<p>将项目与工具进行关联<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">'development'</span>) &#123;</span><br><span class="line">  devtools.connect(<span class="comment">/* host, port */</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>效果展示：</p>
-<img src="/2018/06/29/vuex的使用分享/vuex1-1.png" title="效果展示">
-<h4 id="1-2-3-如何在跑项目的同时启动devtools"><a href="#1-2-3-如何在跑项目的同时启动devtools" class="headerlink" title="1.2.3 如何在跑项目的同时启动devtools"></a>1.2.3 如何在跑项目的同时启动devtools</h4><p>上文提到的启动devtools的命令<code>./node_modules/.bin/vue-devtools</code>，每次启动的时候都要执行，就很繁琐，所以我把它写入了dev环境的webpack配置文件中，这样每次启动dev环境的时候，就会自动把该工具启动。</p>
-<p>在dev的webpack配置文件中加入下面代码<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> process = <span class="built_in">require</span>(<span class="string">'child_process'</span>); <span class="comment">// 创建node子进程</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>) <span class="comment">// 引入path模块</span></span><br><span class="line"></span><br><span class="line">path.resolve(__dirname, <span class="string">'..'</span>) <span class="comment">// 获取node_modules的绝对路径</span></span><br><span class="line"><span class="comment">// 执行命令</span></span><br><span class="line">process.exec(<span class="string">`<span class="subst">$&#123;path.resolve(__dirname, <span class="string">'..'</span>)&#125;</span>/node_modules/.bin/vue-devtools`</span>,</span><br><span class="line">(error, stdout, stderr) =&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (error !== <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'exec error: '</span> + error);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样当你执行npm run xxx的时候，并且也执行了<br><code>./node_modules/.bin/vue-devtools</code></p>
-<h2 id="2-vuex基础知识"><a href="#2-vuex基础知识" class="headerlink" title="2 vuex基础知识"></a>2 vuex基础知识</h2><h3 id="2-1-什么是vuex"><a href="#2-1-什么是vuex" class="headerlink" title="2.1 什么是vuex"></a>2.1 什么是vuex</h3><p>先看个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        name: <span class="string">'thb'</span>,</span><br><span class="line">        age: <span class="number">18</span>,</span><br><span class="line">        profession: <span class="string">'Move Bricks'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        personInfo(state) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`My name is <span class="subst">$&#123;state.name&#125;</span>, I am <span class="subst">$&#123;state.age&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        SET_AGE(state, age) &#123;</span><br><span class="line">            state.age = age;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    actions: &#123;</span><br><span class="line">        nameAsyn(&#123;commit&#125;) &#123;</span><br><span class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                commit(<span class="string">'SET_AGE'</span>, <span class="number">18</span>);</span><br><span class="line">            &#125;, <span class="number">1000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    modules: &#123;</span><br><span class="line">        a: modulesA</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>简单来说就是一个闭包，闭包里面的有一个state对象，它保存了我们许许多多的全局变量，但是我们不能直接修改它，只能通过闭包对外开出来的mutations去修改这些state，其中还开放了例如把state打扮一番再返回的getters，要绕一圈（异步）才能让mutations修改state的actions，还有包含所有内容的子孙后代modules。</p>
-<h3 id="2-2-为什么要使用vuex"><a href="#2-2-为什么要使用vuex" class="headerlink" title="2.2 为什么要使用vuex"></a>2.2 为什么要使用vuex</h3><p>在vue的组件化开发中，经常会遇到需要将当前组件的状态传递给其他组件。父子组件通信时，我们通常会采用 props + emit 这种方式。但当通信双方不是父子组件甚至压根不存在相关联系，或者一个状态需要共享给多个组件时，就会非常麻烦，数据也会相当难维护，这对我们开发来讲就很不友好，vuex 这个时候就很实用。</p>
-<h2 id="3-如何构造vuex"><a href="#3-如何构造vuex" class="headerlink" title="3 如何构造vuex"></a>3 如何构造vuex</h2><h3 id="3-1-代码中的目录结构"><a href="#3-1-代码中的目录结构" class="headerlink" title="3.1 代码中的目录结构"></a>3.1 代码中的目录结构</h3><p>├── build                                       // webpack配置文件<br>├── config                                      // 项目打包路径<br>├── src                                         // 源码目录<br>│   ├── components                              // 组件<br>│   ├── store                                   // vuex的状态管理<br>│   │   ├── modules                             // modules目录<br>│   │       ├── person-center                   // modules子目录<br>│   │           ├── person-center               // 配置module<br>│   │   ├── actions-types.js                    // 定义常量actions名，想要就要不强制<br>│   │   ├── action.js                           // 配置actions<br>│   │   ├── index.js                            // 引用vuex，创建store<br>│   │   ├── mutation-types.js                   // 定义常量muations名，想要就要不强制<br>│   │   └── mutations.js                        // 配置mutations<br>│   │   └── getters.js                          // 配置getters<br>├── index.html                                  // 入口html文件</p>
-<h3 id="3-2-index-js"><a href="#3-2-index-js" class="headerlink" title="3.2 index.js"></a>3.2 index.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">'vuex'</span>;</span><br><span class="line"><span class="keyword">import</span> actions <span class="keyword">from</span> <span class="string">'./actions'</span>; <span class="comment">// 引入actions</span></span><br><span class="line"><span class="keyword">import</span> getters <span class="keyword">from</span> <span class="string">'./getters'</span>; <span class="comment">// 引入getters</span></span><br><span class="line"><span class="keyword">import</span> mutations <span class="keyword">from</span> <span class="string">'./mutations'</span>; <span class="comment">// 引入mutations</span></span><br><span class="line"><span class="comment">// 引入personCenter子模块</span></span><br><span class="line"><span class="keyword">import</span> personCenter <span class="keyword">from</span> <span class="string">'./modules/person-center/person-center'</span>; </span><br><span class="line"></span><br><span class="line">Vue.use(Vuex);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义state的属性</span></span><br><span class="line"><span class="keyword">const</span> state = &#123;</span><br><span class="line">  appInfo: &#123;&#125;,</span><br><span class="line">  loginInfo: &#123;&#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">  state,</span><br><span class="line">  actions,</span><br><span class="line">  getters,</span><br><span class="line">  mutations,</span><br><span class="line">  modules: &#123;</span><br><span class="line">    personCenter,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="3-3-mutations-types-js"><a href="#3-3-mutations-types-js" class="headerlink" title="3.3 mutations-types.js"></a>3.3 mutations-types.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> SET_APPINFO = <span class="string">'SET_APPINFO'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> SET_LOGININFO = <span class="string">'SET_LOGININFO'</span>;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UPDATE_LOGININFO = <span class="string">'UPDATE_LOGININFO'</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="3-4-mutations-js"><a href="#3-4-mutations-js" class="headerlink" title="3.4 mutations.js"></a>3.4 mutations.js</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只能进行同步操作</span></span><br><span class="line"><span class="keyword">import</span> &#123; SET_APPINFO, SET_LOGININFO, UPDATE_LOGININFO &#125; <span class="keyword">from</span> <span class="string">'./mutations-types'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  [SET_APPINFO](state, appInfo) &#123;</span><br><span class="line">    state.appInfo = &#123;</span><br><span class="line">      appId: appInfo.appId,</span><br><span class="line">      mac: appInfo.appMac,</span><br><span class="line">      version: appInfo.appVer,</span><br><span class="line">      locationCode: appInfo.locationCode,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  [SET_LOGININFO](state, loginInfo) &#123;</span><br><span class="line">    state.loginInfo = loginInfo;</span><br><span class="line">  &#125;,</span><br><span class="line">  [UPDATE_LOGININFO](state, updateInfo) &#123;</span><br><span class="line">    <span class="keyword">const</span> keys = <span class="built_in">Object</span>.keys(updateInfo);</span><br><span class="line">    keys.forEach(<span class="function"><span class="params">key</span> =&gt;</span> &#123;</span><br><span class="line">      state.loginInfo[key] = updateInfo[key];</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="3-5-actions-types"><a href="#3-5-actions-types" class="headerlink" title="3.5 actions-types"></a>3.5 actions-types</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UPDATE_LOGININFO_ASYNC = <span class="string">'UPDATE_LOGININFO_ASYNC'</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="3-6-actions"><a href="#3-6-actions" class="headerlink" title="3.6 actions"></a>3.6 actions</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 专门处理异步操作</span></span><br><span class="line"><span class="keyword">import</span> &#123; UPDATE_LOGININFO &#125; <span class="keyword">from</span> <span class="string">'./mutations-types'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; UPDATE_LOGININFO_ASYNC &#125; <span class="keyword">from</span> <span class="string">'./actions-types'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  [UPDATE_LOGININFO_ASYNC](&#123; commit &#125;, data) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      commit(UPDATE_LOGININFO, data);</span><br><span class="line">    &#125;, <span class="number">1000</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="3-7-getters"><a href="#3-7-getters" class="headerlink" title="3.7 getters"></a>3.7 getters</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  myName: <span class="function"><span class="params">state</span> =&gt;</span> <span class="string">`我的名字叫做<span class="subst">$&#123;state.logInfo.fullName&#125;</span>`</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-8-modules"><a href="#3-8-modules" class="headerlink" title="3.8 modules"></a>3.8 modules</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> SET_PORTRAIT = <span class="string">'SET_PORTRAIT'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  namespaced: <span class="literal">true</span>,</span><br><span class="line">  state: &#123;</span><br><span class="line">    portrait: <span class="string">''</span>, <span class="comment">// 头像</span></span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    [SET_PORTRAIT](state, v) &#123;</span><br><span class="line">      state.portrait = v;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="4-如何使用vuex"><a href="#4-如何使用vuex" class="headerlink" title="4 如何使用vuex"></a>4 如何使用vuex</h2><p>构造好了，接下来就是如何在代码中使用这些属性了，我会将不同场景来进行示例。</p>
-<h3 id="4-1-只需要使用到少量的vuex"><a href="#4-1-只需要使用到少量的vuex" class="headerlink" title="4.1 只需要使用到少量的vuex"></a>4.1 只需要使用到少量的vuex</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    stateDemo() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.loginInfo;</span><br><span class="line">    &#125;,</span><br><span class="line">    gettersDemo() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.getters.myName;</span><br><span class="line">    &#125;,</span><br><span class="line">    modulesStateDemo() &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.$store.state.personCenter.portrait;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    mutationsDemo(loginInfo) &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">'SET_LOGININFO'</span>, loginInfo);</span><br><span class="line">    &#125;,</span><br><span class="line">    actionsDemo(loginInfo) &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.dispatch(<span class="string">'UPDATE_LOGININFO_ASYNC'</span>, loginInfo)</span><br><span class="line">    &#125;,</span><br><span class="line">    modulesMutationsDemo(portrait) &#123;</span><br><span class="line">      <span class="keyword">this</span>.$store.commit(<span class="string">'personCenter/SET_PORTRAIT'</span>, portrait);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-2-使用到大量的vuex"><a href="#4-2-使用到大量的vuex" class="headerlink" title="4.2 使用到大量的vuex"></a>4.2 使用到大量的vuex</h3><p>当大量的使用到vuex的state,getters,mutations,actions的时候，将这些状态都声明为计算属性或复写store.commit,store.dispatch会有些重复和冗余。<br>我们可以使用对应的mapState,mapGetters,mapMutations,mapActions辅助函数来简化调用方法。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 记得引入对应的辅助函数</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapState, mapGetters, mapMutations, mapActions &#125; <span class="keyword">from</span> <span class="string">'vuex'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  computed: &#123;</span><br><span class="line">    ...mapState([<span class="string">'loginInfo'</span>]),</span><br><span class="line">    ...mapGetters([<span class="string">'myName'</span>]),</span><br><span class="line">    <span class="comment">// 对于modules你可以将模块的空间名称字符串作为第一个参数传递给辅助函数，这样所有绑定都会自动将该模块作为上下文</span></span><br><span class="line">    ...mapState(<span class="string">'personCenter'</span>, [<span class="string">'portrait'</span>]),</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted () &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.appInfo);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.myName);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.portrait);</span><br><span class="line">    <span class="keyword">this</span>.SET_LOGININFO(<span class="string">'x'</span>);</span><br><span class="line">    <span class="keyword">this</span>.UPDATE_LOGININFO_ASYNC(<span class="string">'xx'</span>);</span><br><span class="line">    <span class="keyword">this</span>.SET_PORTRAIT(<span class="string">'xxx'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    ...mapMutations([<span class="string">'SET_LOGININFO'</span>]),</span><br><span class="line">    ...mapActions([<span class="string">'UPDATE_LOGININFO_ASYNC'</span>]),</span><br><span class="line">    ...mapMutations(<span class="string">'personCenter'</span>, [<span class="string">'SET_PORTRAIT'</span>]),</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="5-总结"><a href="#5-总结" class="headerlink" title="5 总结"></a>5 总结</h2><p>如果你看懂了以上的教程，那么vuex的基础使用定是没有什么问题了，其实vuex很简单，知道怎么构造怎么使用基本上就可以投入开发了。但是对于复杂的场景，还是需要将modules的概念搞搞清楚，这里可以参考<a href="https://vuex.vuejs.org/zh/guide/modules.html" target="_blank" rel="noopener">官方文档</a>。</p>
-
-          
+          1 安装vue-devtools1.1 谷歌浏览器插件安装谷歌商店（需要翻墙）
+1.2 运行在任何环境下的vue-devtools可以运行在任何环境下的tools，这样就解决了一些使用自己外壳的项目也可以集成vue-devtools
+1.2.1 安装devtoolsnpm install --sav
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/06/29/vuex的使用分享/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -410,7 +526,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
